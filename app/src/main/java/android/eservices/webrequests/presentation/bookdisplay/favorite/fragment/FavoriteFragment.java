@@ -5,7 +5,7 @@ import android.eservices.webrequests.data.di.FakeDependencyInjection;
 import android.eservices.webrequests.presentation.bookdisplay.favorite.adapter.BookDetailActionInterface;
 import android.eservices.webrequests.presentation.bookdisplay.favorite.adapter.BookDetailAdapter;
 import android.eservices.webrequests.presentation.bookdisplay.favorite.adapter.BookDetailViewItem;
-import android.eservices.webrequests.presentation.viewmodel.BookFavoriteViewModel;
+//import android.eservices.webrequests.presentation.viewmodel.BookFavoriteViewModel;
 import android.eservices.webrequests.presentation.viewmodel.Event;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-
+/*
 public class FavoriteFragment extends Fragment implements BookDetailActionInterface {
 
     public static final String TAB_NAME = "Favorites";
@@ -97,3 +97,4 @@ public class FavoriteFragment extends Fragment implements BookDetailActionInterf
         //bookFavoritePresenter.detachView();
     }
 }
+*/

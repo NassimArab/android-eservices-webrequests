@@ -22,6 +22,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
+/**
  * Please never do that in a production app. Ever.
  * For the purpose of our course, this is the best option to cover interesting topics as
  * we don't have time to dig into Dependency Injection frameworks such as the famous Dagger.
@@ -38,7 +39,6 @@ public class FakeDependencyInjection {
     private static BookDatabase bookDatabase;
     private static Context applicationContext;
     private static ViewModelFactory viewModelFactory;
-
     public static ViewModelFactory getViewModelFactory() {
         if (viewModelFactory == null) {
             viewModelFactory = new ViewModelFactory(getBookDisplayRepository());
@@ -50,7 +50,7 @@ public class FakeDependencyInjection {
     public static BookDisplayRepository getBookDisplayRepository() {
         if (bookDisplayRepository == null) {
             bookDisplayRepository = new BookDisplayDataRepository(
-                    new BookDisplayLocalDataSource(getBookDatabase()),
+                    new BookDisplayLocalDataSource(new BookDatabase()),//getBookDatabase()),
                     new BookDisplayRemoteDataSource(getBookDisplayService()),
                     new BookToBookEntityMapper()
             );
@@ -95,11 +95,11 @@ public class FakeDependencyInjection {
         applicationContext = context;
     }
 
-    public static BookDatabase getBookDatabase() {
+   /* public static BookDatabase getBookDatabase() {
         if (bookDatabase == null) {
             bookDatabase = Room.databaseBuilder(applicationContext,
                     BookDatabase.class, "book-database").build();
         }
         return bookDatabase;
-    }
+    }*/
 }
